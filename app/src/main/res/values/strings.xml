@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TeachProg</string>
+    <string name="year_add">Bouton pour ajouter un nouveau bloc</string>
+    <string name="popup_text">Nouvel élément...</string>
+    <string name="popup_cancel">Annuler</string>
+    <string name="popup_confirm">Confirmer</string>
+    <string name="startup_retry">Réessayer</string>
+</resources>
