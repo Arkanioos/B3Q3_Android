@@ -5,6 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.studentSelection.view.StudentActivity">
+    tools:context="maxm.androidb3.androidb3.features.studentSelection.view.StudentActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

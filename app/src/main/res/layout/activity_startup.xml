@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beige"
-    tools:context=".features.startup.view.StartupActivity">
+    tools:context="maxm.androidb3.androidb3.features.startup.view.StartupActivity">
 
     <Button
         android:id="@+id/startupRetryButton"

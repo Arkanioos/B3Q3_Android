@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beige"
-    tools:context=".features.classSelection.view.ClassActivity">
+    tools:context="maxm.androidb3.androidb3.features.classSelection.view.ClassActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/itemsList"

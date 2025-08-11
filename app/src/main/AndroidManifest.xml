@@ -11,13 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".features.studentSelection.view.StudentActivity"
+            android:name="maxm.androidb3.androidb3.features.studentSelection.view.StudentActivity"
             android:exported="false" />
         <activity
-            android:name=".features.classSelection.view.ClassActivity"
+            android:name="maxm.androidb3.androidb3.features.classSelection.view.ClassActivity"
             android:exported="false" />
         <activity
-            android:name=".features.startup.view.StartupActivity"
+            android:name="maxm.androidb3.androidb3.features.startup.view.StartupActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".features.yearSelection.view.YearActivity"
+            android:name="maxm.androidb3.androidb3.features.yearSelection.view.YearActivity"
             android:exported="true" />
     </application>
 
