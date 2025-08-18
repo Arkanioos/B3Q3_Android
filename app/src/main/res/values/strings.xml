@@ -5,4 +5,18 @@
     <string name="popup_cancel">Annuler</string>
     <string name="popup_confirm">Confirmer</string>
     <string name="startup_retry">Réessayer</string>
+    <string name="class_title">Cours</string>
+    <string name="student_title">Etudiants</string>
+    <string name="year_title">Années</string>
+    <string name="test_title">Evaluations</string>
+    <string name="note_title">Notes</string>
+    <string name="note_default">Pas encore de note</string>
+    <string name="note_average_default">Pas encore de moyenne</string>
+    <string name="note_replace_default">Voulez-vous écraser la note existante ?</string>
+    <string name="student_firstname_hint">Prénom...</string>
+    <string name="student_lastname_hint">Nom...</string>
+    <string name="student_registration_hint">Matricule...</string>
+    <string name="note_delete_default">Voulez-vous supprimer la note existante ?</string>
+    <string name="test_checkbox">Sous-évaluation</string>
+    <string name="test_parent_title">Choisir l\'évaluation mère</string>
 </resources>

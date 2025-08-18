@@ -21,7 +21,7 @@ public class StartupPresenter implements StartupContract.Presenter {
         } catch (DatabaseCreationException e){
             String details = e.getMessage();
             if(details == null || details.isEmpty()) details = "No details";
-            Log.e("Error", details);
+            Log.e("ERROR_STARTUP", details);
             view.showError(details);
         }
     }
@@ -33,7 +33,7 @@ public class StartupPresenter implements StartupContract.Presenter {
         }catch (IllegalStateException | DatabaseCreationException e){
             String details = e.getMessage();
             if(details == null || details.isEmpty()) details = "No details";
-            Log.e("Error", details);
+            Log.e("ERROR_STARTUP", details);
             view.showError(details);
         }
     }

@@ -21,6 +21,8 @@ import maxm.androidb3.androidb3.common.factory.PresenterFactory;
 import maxm.androidb3.androidb3.common.keys.IntentExtraKeys;
 import maxm.androidb3.androidb3.features.classSelection.contract.ClassContract;
 import maxm.androidb3.androidb3.features.classSelection.model.Class;
+import maxm.androidb3.androidb3.features.test.view.TestActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -61,7 +63,7 @@ public class ClassActivity extends AppCompatActivity implements ClassContract.Vi
         initializeDialog();
         initializeList();
 
-        addButton = findViewById(R.id.addYear);
+        addButton = findViewById(R.id.addItem);
         addButton.setOnClickListener(view -> {
             showCustomDialog();
         });
@@ -71,7 +73,7 @@ public class ClassActivity extends AppCompatActivity implements ClassContract.Vi
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
-        dialog.setContentView(R.layout.dialog_input);
+        dialog.setContentView(R.layout.dialog_generic_input);
         dialogInput = dialog.findViewById(R.id.textInput);
         dialogErrorDetails = dialog.findViewById(R.id.inputDialogErrorDetails);
         dialogCancelButton = dialog.findViewById(R.id.cancelButton);
@@ -123,7 +125,7 @@ public class ClassActivity extends AppCompatActivity implements ClassContract.Vi
     public void closeDialog() { dialog.dismiss(); }
 
     public void loadStudentActivity(Class clickedItem){
-        Intent intent = new Intent(this, ClassActivity.class);
+        Intent intent = new Intent(this, TestActivity.class);
         intent.putExtra(IntentExtraKeys.CLASS_KEY, clickedItem);
         startActivity(intent);
     }

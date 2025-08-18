@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.androidb3.R;
 import maxm.androidb3.androidb3.common.factory.PresenterFactory;
-import maxm.androidb3.androidb3.features.yearSelection.view.YearActivity;
+import maxm.androidb3.androidb3.features.year.view.YearActivity;
 import maxm.androidb3.androidb3.features.startup.contract.StartupContract;
 
 public class StartupActivity extends AppCompatActivity implements StartupContract.View {

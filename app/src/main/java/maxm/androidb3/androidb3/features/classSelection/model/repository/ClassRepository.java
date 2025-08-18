@@ -14,9 +14,9 @@ public class ClassRepository implements ClassContract.Repository {
         this.dao = dao;
     }
 
-    public void insertAll(ClassEntity... classes) throws DaoOperationException {
+    public long insert(ClassEntity insertedClass) throws DaoOperationException {
         try{
-            dao.insertAll(classes);
+            return dao.insert(insertedClass);
         } catch (Exception e){
             String details = e.getMessage();
             if(details == null || details.isEmpty()) details = "No details";

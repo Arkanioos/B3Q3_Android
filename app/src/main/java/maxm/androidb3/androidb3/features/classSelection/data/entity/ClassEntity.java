@@ -5,7 +5,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import maxm.androidb3.androidb3.features.classSelection.model.Class;
-import maxm.androidb3.androidb3.features.yearSelection.data.entity.YearEntity;
+import maxm.androidb3.androidb3.features.year.data.entity.YearEntity;
 
 @Entity(
         tableName = "class_table",
@@ -38,7 +38,11 @@ public class ClassEntity {
         this.yearId = yearId;
     }
 
+    public boolean isValid(){
+        return name != null && !name.trim().isEmpty();
+    }
+
     public Class toModel(){
-        return new Class(name, yearId);
+        return new Class(name, id, yearId);
     }
 }

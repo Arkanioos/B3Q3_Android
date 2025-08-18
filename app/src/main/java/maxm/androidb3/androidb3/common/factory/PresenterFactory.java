@@ -5,24 +5,30 @@ import maxm.androidb3.androidb3.features.classSelection.data.dao.ClassDao;
 import maxm.androidb3.androidb3.features.classSelection.model.repository.ClassRepository;
 import maxm.androidb3.androidb3.features.classSelection.presenter.ClassPresenter;
 import maxm.androidb3.androidb3.features.database.data.AppDatabase;
-import maxm.androidb3.androidb3.features.studentSelection.contract.StudentContract;
-import maxm.androidb3.androidb3.features.studentSelection.data.dao.StudentDao;
-import maxm.androidb3.androidb3.features.studentSelection.model.repository.StudentRepository;
-import maxm.androidb3.androidb3.features.studentSelection.presenter.StudentPresenter;
-import maxm.androidb3.androidb3.features.yearSelection.contract.YearContract;
-import maxm.androidb3.androidb3.features.yearSelection.data.dao.YearDao;
-import maxm.androidb3.androidb3.features.yearSelection.model.repository.YearRepository;
-import maxm.androidb3.androidb3.features.yearSelection.presenter.YearPresenter;
+import maxm.androidb3.androidb3.features.note.contract.NoteContract;
+import maxm.androidb3.androidb3.features.note.data.dao.NoteDao;
+import maxm.androidb3.androidb3.features.note.model.repository.NoteRepository;
+import maxm.androidb3.androidb3.features.note.presenter.NotePresenter;
+import maxm.androidb3.androidb3.features.test.contract.TestContract;
+import maxm.androidb3.androidb3.features.student.contract.StudentContract;
+import maxm.androidb3.androidb3.features.student.data.dao.StudentDao;
+import maxm.androidb3.androidb3.features.student.model.repository.StudentRepository;
+import maxm.androidb3.androidb3.features.student.presenter.StudentPresenter;
+import maxm.androidb3.androidb3.features.test.data.dao.TestDao;
+import maxm.androidb3.androidb3.features.test.model.repository.TestRepository;
+import maxm.androidb3.androidb3.features.test.presenter.TestPresenter;
+import maxm.androidb3.androidb3.features.year.contract.YearContract;
+import maxm.androidb3.androidb3.features.year.data.dao.YearDao;
+import maxm.androidb3.androidb3.features.year.model.repository.YearRepository;
+import maxm.androidb3.androidb3.features.year.presenter.YearPresenter;
 import maxm.androidb3.androidb3.features.startup.contract.StartupContract;
 import maxm.androidb3.androidb3.features.startup.presenter.StartupPresenter;
 
 public class PresenterFactory {
     public static YearContract.Presenter providePresenter(YearContract.View view){
-        //YearContract.Model model = new Model();
         YearDao dao = AppDatabase.getInstance().yearDao();
         YearContract.Repository repository = new YearRepository(dao);
         return new YearPresenter(view, repository);
-        //return new YearPresenter(view, model);
     }
 
     public static StartupContract.Presenter providePresenter(StartupContract.View view){
@@ -39,5 +45,17 @@ public class PresenterFactory {
         StudentDao dao = AppDatabase.getInstance().studentDao();
         StudentContract.Repository repository = new StudentRepository(dao);
         return new StudentPresenter(view, repository);
+    }
+
+    public static TestContract.Presenter providePresenter(TestContract.View view){
+        TestDao dao = AppDatabase.getInstance().testDao();
+        TestContract.Repository repository = new TestRepository(dao);
+        return new TestPresenter(view, repository);
+    }
+
+    public static NoteContract.Presenter providePresenter(NoteContract.View view){
+        NoteDao dao = AppDatabase.getInstance().noteDao();
+        NoteContract.Repository repository = new NoteRepository(dao);
+        return new NotePresenter(view, repository);
     }
 }

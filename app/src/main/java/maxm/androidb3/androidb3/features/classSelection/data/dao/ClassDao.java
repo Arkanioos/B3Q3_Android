@@ -12,10 +12,10 @@ import java.util.List;
 @Dao
 public interface ClassDao {
     @Insert
-    void insertAll(ClassEntity... classes); // stratégie de conflit par défaut = abort
+    long insert(ClassEntity insertedClass); // stratégie de conflit par défaut = abort
 
     @Delete
-    void delete(ClassEntity className);
+    void delete(ClassEntity deletedClass);
 
     @Query("SELECT * FROM class_table WHERE yearId = :yearId")
     List<ClassEntity> getAllByYearId(long yearId);

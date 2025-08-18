@@ -11,7 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="maxm.androidb3.androidb3.features.studentSelection.view.StudentActivity"
+            android:name="maxm.androidb3.androidb3.features.note.view.NoteActivity"
+            android:exported="false" />
+        <activity
+            android:name="maxm.androidb3.androidb3.features.test.view.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name="maxm.androidb3.androidb3.features.student.view.StudentActivity"
             android:exported="false" />
         <activity
             android:name="maxm.androidb3.androidb3.features.classSelection.view.ClassActivity"
@@ -26,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="maxm.androidb3.androidb3.features.yearSelection.view.YearActivity"
+            android:name="maxm.androidb3.androidb3.features.year.view.YearActivity"
             android:exported="true" />
     </application>
 

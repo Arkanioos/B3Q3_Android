@@ -26,6 +26,6 @@ public interface ClassContract {
 
     interface Repository {
         List<ClassEntity> getAllById(long yearId) throws DaoOperationException;
-        void insertAll(ClassEntity... classes) throws DaoOperationException;
+        long insert(ClassEntity classes) throws DaoOperationException;
     }
 }

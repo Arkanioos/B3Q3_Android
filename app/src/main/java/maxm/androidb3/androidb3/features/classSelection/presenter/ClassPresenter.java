@@ -11,9 +11,9 @@ import maxm.androidb3.androidb3.features.classSelection.data.entity.ClassEntity;
 import maxm.androidb3.androidb3.features.common.model.AdapterHandler;
 import maxm.androidb3.androidb3.features.common.model.ListItem;
 import maxm.androidb3.androidb3.features.database.model.exception.DaoOperationException;
-import maxm.androidb3.androidb3.features.yearSelection.model.Year;
-import maxm.androidb3.androidb3.features.yearSelection.model.exception.EmptyDialogInputException;
-import maxm.androidb3.androidb3.features.yearSelection.view.ListAdapter;
+import maxm.androidb3.androidb3.features.year.model.Year;
+import maxm.androidb3.androidb3.features.year.model.exception.EmptyDialogInputException;
+import maxm.androidb3.androidb3.features.common.model.ListAdapter;
 import maxm.androidb3.androidb3.features.classSelection.model.Class;
 
 import java.util.ArrayList;
@@ -40,13 +40,13 @@ public class ClassPresenter implements ClassContract.Presenter, AdapterHandler {
             currentYear = (Year)intent.getSerializableExtra(IntentExtraKeys.YEAR_KEY);
             List<ClassEntity> entities = repository.getAllById(currentYear.getId());
             for(ClassEntity entity : entities){
-                if(entity.name == null || entity.name.isEmpty()) continue;
+                if(!entity.isValid()) continue;
                 adapter.addItem(entity.toModel());
             }
         } catch (Exception e){
             String details = e.getMessage();
             if(details == null || details.isEmpty()) details = "No details";
-            Log.e("Error", details);
+            Log.e("ERROR_CLASS", details);
             view.showError(details);
         }
     }
@@ -55,19 +55,21 @@ public class ClassPresenter implements ClassContract.Presenter, AdapterHandler {
         try{
             if(input.isEmpty()) throw new EmptyDialogInputException("Le champ doit être rempli.");
             Class _class = new Class(input, currentYear.getId());
-            repository.insertAll(_class.toEntity());
+            long insertedId = repository.insert(_class.toEntity());
+            _class.setId(insertedId);
             adapter.addItem(_class);
             view.closeDialog();
         } catch (EmptyDialogInputException | DaoOperationException e) {
             String details = e.getMessage();
             if(details == null || details.isEmpty()) details = "No details";
-            Log.e("Error", details);
+            Log.e("ERROR_CLASS", details);
             view.showDialogError(details);
         }
     }
 
     public void onItemClicked(ListItem item){
         Class _class = (Class)item;
+        Log.d("TEST_CLASS", "RETRIEVED CLASS : " + _class.getName() + " " + _class.getId());
         view.loadStudentActivity(_class);
     }
 }

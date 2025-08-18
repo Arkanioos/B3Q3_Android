@@ -10,6 +10,9 @@
         android:layout_height="40dp"
         android:background="@color/primary"
         android:gravity="start"
+        android:paddingVertical="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:textColor="@color/dark_light"
         android:textSize="20sp" />
 
